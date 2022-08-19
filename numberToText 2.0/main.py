@@ -21,7 +21,11 @@ def wantToContinue():
 
 def main():
     while True:
-        input_number=int(input("\nEnter the number : "))
+        try:
+            input_number=int(input("\nEnter the number : "))
+        except ValueError:
+            print("\nEnter a valid integer.")
+            main()
         if input_number > 9999999:
             print("\nEnter a number in million range")
             continue
